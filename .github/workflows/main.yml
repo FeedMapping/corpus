@@ -2,7 +2,7 @@
 name: COmpendium of RElations – Modulo 6
 
 on:
-  #push:
+  push:
   workflow_run:
     types: [completed]
     workflows: ["pages-build-deployment"]
@@ -11,7 +11,7 @@ on:
 
 concurrency:
   cancel-in-progress: true
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}
 
 # ⚠️ Set token permissions
 permissions: write-all
